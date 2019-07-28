@@ -1,0 +1,125 @@
+/* -----------------------------------------------------------
+--------- Lightbox with Previous & Next functionality --------
+-------------------------------------------------------------*/
+
+
+
+/*------------------------------------------------------------
+-------------------  Overlay (Modal) -------------------------
+-------------------------------------------------------------*/
+
+#overlay {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+#modal {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+#modal a {
+  display:block;
+  text-decoration: none;
+  padding: 10px;
+}
+
+
+
+/* Images: Original size 1900 x 1200
+-- 1200 / 1900 = 0.6315789473684211
+*/
+#overlay img {
+  width: 65%;
+  border: 1px solid #f6f6f6;
+}
+
+#overlay p {
+  color: white;
+  max-width: 85%;
+  margin-top: 3%;
+}
+
+svg.leftarrow,
+svg.rightarrow {
+  opacity: 1;
+  width: 35px;
+  height: 35px;
+  fill: white;
+}
+
+svg.leftarrow:hover,
+svg.leftarrow:focus,
+svg.rightarrow:hover,
+svg.rightarrow:focus {
+fill: #fcff7e;
+transition: all 0.3s ease-in-out;
+}
+
+
+.active {
+  display:block;
+}
+
+.notActive {
+  display: none;
+}
+
+
+
+/*-------------------------------------------------------------
+----------------  Breakpoints  --------------------------------
+-------------------------------------------------------------*/
+
+@media screen and (min-width: 480px) { /* IPhone 5C Landscape */
+  
+  svg.leftarrow,
+  svg.rightarrow {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) { /* IPad Potrait */
+     
+    svg.leftarrow,
+    svg.rightarrow {
+      width: 55px;
+      height: 55px;
+      margin: 25px;
+      }
+}
+
+
+@media screen and (min-width: 1024px) { /* IPad Landscape or larger */
+     
+    svg.leftarrow,
+    svg.rightarrow {
+      width: 70px;
+      height: 70px;
+      } 
+}
+
+@media screen and (min-width: 1440px) { /* IPad Landscape or larger */
+  #overlay p {
+    width: 1440px;
+    text-align: center;
+  }
+  
+
+}
+  

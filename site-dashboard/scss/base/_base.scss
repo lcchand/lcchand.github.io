@@ -1,0 +1,95 @@
+/*----------------------------------*/
+/*   _base.scss  (body, p, a, etc)  */
+/*----------------------------------*/
+
+// Any padding or border that’s applied
+// will not be added to the rendered width
+* {
+  box-sizing: border-box;
+}
+
+/* Limit Overall overall page width */
+html {
+  max-width: 1440px;
+  margin: 0 auto;
+  background: $theme-gray;
+}
+
+@import url($font-url--SourceSans);
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-family: $font-family--SourceSans;
+    color: $body-text-color;
+    background-color: $white;
+
+    @media #{$brk-desktop} {
+	font-size: 16px;
+    }
+    
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+
+h1 {
+  font-family: $font-family--SourceSans;
+  font-weight: $SourceSans-weight-bold;
+  font-size: 1.3333333333333333em;
+  color: $body-text-color;
+
+  @media #{$brk-tablet} {
+      font-size: 2.25em;
+  }
+}
+
+
+
+h2 {
+  font-size: 1em;
+  line-height: 1.0;
+  padding-top: 1em;
+  margin: 0 0 0.5em 0;
+  text-transform: uppercase;
+  color: $body-text-color;
+
+  @media #{$brk-tablet} {
+      font-size: 1.375em;
+  }
+}
+
+h3 {
+  font-size: 1em;
+  color: $theme-primary;
+
+  @media #{$brk-tablet} {
+    font-size: 1.2em;
+  }
+}
+
+h4 {
+  color: $white;
+  letter-spacing: .2em;
+  padding-right: 1em;
+  margin: 0;
+}
+
+// Link Styles
+a {
+    text-decoration: none;
+    padding: 0;
+    color: $href-color;
+
+    &:hover {
+	color: $href-hover-color;
+    }
+}

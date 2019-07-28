@@ -1,0 +1,271 @@
+/* Global Imports   */
+/*-------------------------------*/
+/*   Base Imports                */
+/*-------------------------------*/
+/*-------------------------------*/
+/*   _variables.scss             */
+/*-------------------------------*/
+/*----------------------------------*/
+/*   _base.scss  (body, p, a, etc)  */
+/*----------------------------------*/
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700");
+* {
+  box-sizing: border-box; }
+
+html, body {
+  min-height: 100%; }
+
+/* Limit Overall overall page width */
+html {
+  max-width: 1440px;
+  margin: 0 auto;
+  background: #b2b2b2; }
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 0.25em;
+  color: #8e8e8e; }
+  @media (min-width: 768px) {
+    body {
+      font-size: 16px;
+      line-height: .5em; } }
+  @media (min-width: 1440px) {
+    body {
+      line-height: .75em; } }
+
+h1 {
+  font-weight: 700;
+  font-size: 1.15em;
+  line-height: 1em;
+  color: #424242;
+  text-transform: uppercase; }
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 1.15em; } }
+  @media (min-width: 1440px) {
+    h1 {
+      font-size: 1.35em; } }
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+/*-------------------------------*/
+/*   Layout Imports              */
+/*-------------------------------*/
+/*-------------------------------*/
+/*   _containers.scss            */
+/*-------------------------------*/
+.flex-all {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column; }
+
+.page-container {
+  margin: 0;
+  padding: 16px;
+  background: #f8f8f8; }
+  @media (min-width: 768px) {
+    .page-container {
+      padding: 25px; } }
+
+section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; }
+  @media (min-width: 768px) {
+    section {
+      flex-direction: row;
+      flex-wrap: wrap; } }
+  @media (min-width: 1440px) {
+    section {
+      margin: 20px; } }
+
+/*-------------------------------*/
+/*   header.scss                 */
+/*-------------------------------*/
+header {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  margin: 0;
+  padding: 16px;
+  padding-bottom: 10px;
+  background: #f8f8f8; }
+  @media (min-width: 768px) {
+    header {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 32px;
+      padding-bottom: 15px; } }
+  @media (min-width: 1440px) {
+    header {
+      padding: 50px;
+      padding-bottom: 20px; } }
+
+/*-------------------------------*/
+/*   Layout Imports              */
+/*-------------------------------*/
+/*-------------------------------*/
+/*   _employee-widget.scss       */
+/*-------------------------------*/
+/* Widget - Employee */
+article {
+  cursor: pointer; }
+
+.employee-widget {
+  display: flex;
+  align-items: center;
+  height: 85px;
+  width: 100%;
+  padding: 5px 5px 6px 5px;
+  margin-bottom: 10px;
+  background-color: white;
+  border: 1px solid #b2b2b2;
+  border-radius: 5px; }
+  @media (min-width: 568px) {
+    .employee-widget {
+      height: 100px;
+      padding: 10px 10px 12px 10px; } }
+  @media (min-width: 768px) {
+    .employee-widget {
+      flex: 1 1 300px;
+      height: 125px;
+      margin: 0 5px 10px 5px; } }
+  @media (min-width: 1024px) {
+    .employee-widget {
+      flex: 1 1 350px;
+      height: 150px; } }
+  @media (min-width: 1440px) {
+    .employee-widget {
+      flex: 1 1 415px;
+      height: 185px;
+      margin-bottom: 17px; } }
+
+.employee-widget:hover {
+  border: 2px solid #424242;
+  background-color: rgba(255, 204, 0, 0.3);
+  transition: all 0.3s ease-out; }
+
+figure {
+  margin: 0px 5px 0px 0px; }
+  @media (min-width: 568px) {
+    figure {
+      margin: 0px 10px 0px 5px; } }
+
+.employee-photo {
+  border-radius: 50%;
+  margin-right: 0.25em;
+  width: 60px; }
+  @media (min-width: 768px) {
+    .employee-photo {
+      width: 70px; } }
+  @media (min-width: 1024px) {
+    .employee-photo {
+      width: 100px; } }
+  @media (min-width: 1440px) {
+    .employee-photo {
+      width: 135px; } }
+
+.employee-name {
+  color: #424242;
+  font-weight: 700;
+  text-transform: capitalize; }
+  @media (min-width: 768px) {
+    .employee-name {
+      font-size: 1.10em; } }
+  @media (min-width: 1440px) {
+    .employee-name {
+      font-size: 1.25em; } }
+
+.employee-city,
+.employee-error {
+  text-transform: capitalize; }
+
+.employee-error {
+  text-align: center;
+  font-size: 1.5em;
+  color: red; }
+
+/*-------------------------------*/
+/* _employee-detail-widget.scss  */
+/*-------------------------------*/
+/* Widget - Employee Detail  */
+.employee-detail {
+  background-color: white;
+  width: 250px;
+  border: 1px solid #b2b2b2;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 15%;
+  padding: 12px;
+  padding-top: 16px;
+  text-align: center;
+  line-height: 1.125em;
+  /* Fix: always visible no matter viewport height */
+  position: fixed;
+  left: calc((100vw - 250px) / 2); }
+  @media (min-width: 768px) {
+    .employee-detail {
+      width: 300px;
+      padding: 25px;
+      padding-top: 32px;
+      margin-top: 10%;
+      left: calc((100vw - 300px) / 2); } }
+  @media (min-width: 1024px) {
+    .employee-detail {
+      width: 458px;
+      padding: 40px;
+      padding-top: 55px;
+      border: 2px solid #b2b2b2;
+      left: calc((100vw - 458px) / 2); } }
+
+.employee-detail-photo {
+  border-radius: 50%;
+  width: 70px; }
+  @media (min-width: 768px) {
+    .employee-detail-photo {
+      width: 100px; } }
+  @media (min-width: 1024px) {
+    .employee-detail-photo {
+      width: 120px; } }
+  @media (min-width: 1440px) {
+    .employee-detail-photo {
+      width: 155px; } }
+
+.figure-detail {
+  margin: 0; }
+
+hr {
+  margin-top: 9px;
+  margin-bottom: 9px; }
+  @media (min-width: 768px) {
+    hr {
+      margin-top: 20px;
+      margin-bottom: 20px; } }
+  @media (min-width: 1024px) {
+    hr {
+      margin-top: 40px;
+      margin-bottom: 40px; } }
+
+.employee-contact {
+  text-transform: capitalize; }
+
+#overlay {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: none;
+  text-align: center; }
+
+/*# sourceMappingURL=application.css.map */

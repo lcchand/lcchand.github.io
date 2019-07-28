@@ -1,0 +1,16 @@
+/*-------------------------------*/
+/*   _settings-widget.scss       */
+/*-------------------------------*/
+
+/* Email Notificagtion */
+
+.settings-container {
+  width: 65%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.settings-container:nth-child(3n) {
+  padding-bottom: 1em;
+}

@@ -1,0 +1,53 @@
+/*-------------------------------*/
+/*   _variables.scss             */
+/*-------------------------------*/
+
+// Color Variables
+
+$theme-gray              : rgb(178, 178, 178);
+$body-text-color         : rgb(142, 142, 142);
+$h1-text-color           : #424242;
+$white                   : rgb(255, 255, 255);
+$overlay                 : rgba(0, 0, 0, 0.5);
+$widget-gray             : #f8f8f8;
+$employee-hilite         : rgba(255, 204, 0, 0.3);
+
+
+
+// Font Stacks - Google Source Sans Pro
+
+$font-url--Roboto         : 'https://fonts.googleapis.com/css?family=Roboto:300,400,700';
+$font-family--Roboto      : 'Roboto', sans-serif;
+
+
+
+// Font Weights
+
+$Roboto-weight-light      : 300;
+$Roboto-weight-regular    : 400;
+$Roboto-weight-bold       : 700;
+
+
+
+//Asset Paths
+
+$path-icon         : 'icons';
+
+
+
+// Global Margins
+
+$margin-mobile        : 10px;
+$margin-tablet        : 15px;
+$margin-max           : 20px;
+
+
+
+// Media query Breakpoints
+
+$brk-mobile           : '(min-width: 320px)';
+$brk-mobile-landscape : '(min-width: 568px)';
+$brk-tablet           : '(min-width: 768px)';
+$brk-desktop          : '(min-width: 1024px)';
+$brk-max              : '(min-width: 1440px)';
+

@@ -1,0 +1,108 @@
+/*-------------------------------*/
+/*   _employee-widget.scss       */
+/*-------------------------------*/
+
+
+
+/* Widget - Employee */
+
+//Fix IOS issue (Ipad/Iphone) with "click " events
+article {
+    cursor: pointer;
+}
+
+.employee-widget {
+    display: flex;
+    align-items: center;
+    height: 85px;
+    width: 100%;
+    padding: 5px 5px 6px 5px;
+    margin-bottom: 10px;
+    background-color: $white;
+    border: 1px solid $theme-gray;
+    border-radius: 5px;
+
+    @media #{$brk-mobile-landscape} {
+	height: 100px;
+	padding: 10px 10px 12px 10px;
+	
+    }
+
+    @media #{$brk-tablet} {
+	flex: 1 1 300px;
+	height: 125px;
+	margin: 0 5px 10px 5px;
+    }
+
+    @media #{$brk-desktop} {
+	flex: 1 1 350px;
+	height: 150px;
+    }
+
+    @media #{$brk-max} {
+	flex: 1 1 415px;
+	height: 185px;
+	margin-bottom: 17px;
+    }
+}
+
+.employee-widget:hover {
+    border: 2px solid $h1-text-color;
+    background-color: $employee-hilite;
+    transition: all 0.3s ease-out;
+}
+
+
+figure {
+    margin: 0px 5px 0px 0px;
+
+    @media #{$brk-mobile-landscape} {
+	margin: 0px 10px 0px 5px;
+    }
+}
+
+.employee-photo {
+    border-radius: 50%;
+    margin-right: 0.25em;
+    width: 60px;
+
+    @media #{$brk-tablet} {
+	//width: 80px;
+	width: 70px;
+    }
+
+    @media #{$brk-desktop} {
+	width: 100px;
+    }
+
+    @media #{$brk-max} {
+	width: 135px;
+    }
+}
+
+.employee-name {
+    color: $h1-text-color;
+    font-weight: $Roboto-weight-bold;
+    text-transform: capitalize;
+
+    @media #{$brk-tablet} {
+	font-size: 1.10em;
+    }
+
+    @media #{$brk-max} {
+	font-size: 1.25em;
+    }
+}
+
+.employee-city,
+.employee-error {
+    text-transform: capitalize;
+}
+
+.employee-error {
+    text-align: center;
+    font-size: 1.5em;
+    color: red;
+}
+    
+

@@ -1,0 +1,28 @@
+/*-------------------------------*/
+/*   _variables.scss             */
+/*-------------------------------*/
+
+// Descriptive Color Variables
+$white         : rgb(255, 255, 255);
+$graytext      : rgb(100, 100, 100);
+$orange        : rgb(229, 149, 64);
+
+
+
+
+// Font Stacks
+
+
+
+//Asset Paths
+
+$path-icons    : 'icons';
+$path-svgs     : 'svg';
+$path-video    : 'video';
+
+
+
+//Media Query Breakpoints
+
+$brk-mobile    : '(min-width: 320px) and (max-width: 419px)';
+$brk-desktop   : '(min-width: 420px)';

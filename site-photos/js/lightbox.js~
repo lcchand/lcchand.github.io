@@ -1,0 +1,124 @@
+(function() {
+
+// Modeled on Andrew Chalkley's video - create a simple Lightbox
+
+// --- Global Overlay jQuery DOM objects --
+  var $overlay = $('<div id="overlay"></div>');                 // create JQuery DIV object for overlay - $ is convention for JQuery objects
+  var $prevArrow = '<a class="prev" href="#" ><img class="leftarrow" src="photos/leftLink.png" /></a>';     // Create Left/Previous Arrow
+  var $nextArrow = '<a class="next" href="#" ><img class="rightarrow" src="photos/rightLink.png" /></a>';   // Create Right/Next Arrow
+  var $image = $("<img id='photo'>");                           // create Image JQuery object selected from: a href link
+  var $caption = $('<p></p>');                                  // create JQuery object for caption
+
+// --- Detached DOM elements ------
+  $overlay.append($prevArrow);                                  // Left/Previous Arrow - add to overlay
+  $overlay.append($image);                                      // Update overlay with the image linked in href
+  $overlay.append($nextArrow);                                  // Right/Next Arrow - add to overlay
+  $overlay.append($caption);                                    // caption - append to overlay
+  $("body").append($overlay);                                    // Overlay - Append to BODY of document
+// --- Overlay jQuery DOM objects --
+
+// -------- LiveSearch ------------
+  var $imgs = $('#gallery img');                                // Get the images
+  var $search = $('#filter-search');                            // Get the input element
+  var cache = [];                                               // Create an array called cache
+  $imgs.each(function() {                                       // For each image
+    cache.push({                                                // Add an object to the cache array
+      element: this,                                            // This image
+      text: this.alt.trim().toLowerCase()                       // Its alt text (lowercase trimmed)
+    });
+  });
+
+
+  function filter() {                                           // Declare filter() function
+    var query = this.value.trim().toLowerCase();                // Get the query
+
+    cache.forEach(function(img) {                               // For each entry in cache pass image
+      var index = 0;                                            // Set index to 0
+      if (query) {                                              // If there is some query text
+        index = img.text.indexOf(query);                        // Find if query text is in there
+      }
+
+      img.element.closest('a').style.display = index === -1 ? 'none' : '';   //anchor = Show / hide
+      img.element.closest('a').className = index === -1 ? '' : 'active';     //anchor = if its a match, assign class of active, otherwise no class
+      img.element.className = index === -1 ? 'notActive' : 'active';         //img = Class = active / notActive
+
+      });
+    }
+// -------- LiveSearch ------------
+
+// --- Click Event Handler - Wrapper DIV with Gallery=ID - "Any" anchors with a class=active containing images --------------
+
+  $('#gallery a[class="active"]').click(function(event){        // Capture Click event - Gallery ID assigned to DIV wrapper
+  	event.preventDefault();                                     // prevent click event from going to link
+  	var imageLocation = $(this).attr("href");                   // select current href (IMG w/ anchor) & assign to variable
+    var numOfImages = $('#gallery a[class="active"]');          // Select all anchors with class=active within Div ID=Gallery
+    var currentImageIndex = $( 'a[class="active"]' ).index( this );      // assign Index number of current slide
+
+
+  		$(".leftarrow").click(function(event) {                   // If you clicked on the "Left/Previous" arrow
+  			event.stopPropagation();
+  			var prevImage = numOfImages[currentImageIndex-1];       // assign prevImage to the element one position less in the array
+  			currentImageIndex = (currentImageIndex - 1);            // decrement index postion in the array
+  			if (currentImageIndex < 0) {                            // Make sure we are not going beyond the first element in the array
+  				currentImageIndex = 0;                                // Reset to Index Postion = 0 because you can not go any further
+  				prevImage = numOfImages[0];                           // Reset to First slide because you can not go any further
+  			}
+  			imageLocation = $(prevImage).attr("href");
+  //			console.log('After that click currentImageIndex = ' + currentImageIndex)
+  //			console.log(imageLocation + ' will be the next image going left');
+  			updateOverlay(prevImage);                               // pass prevImage value to function updateOverlay
+  		});
+
+
+  		$(".rightarrow").click(function(event) {                  // If you clicked on the "Right/Next" arrow
+  			event.stopPropagation();
+  			var nextImage = numOfImages[currentImageIndex+1];       // assign nextImage to the element one position more in the array
+  			currentImageIndex = (currentImageIndex + 1);            // increment index postion in the array
+  			if (currentImageIndex == numOfImages.length) {          // Make sure we are not going beyond the last element in the array
+  				currentImageIndex = (numOfImages.length - 1);         // Reset to Index Postion = Last because you can not go any further
+  				nextImage = numOfImages[currentImageIndex];           // Reset to Last slide because you can not go any further
+  			}
+  			imageLocation = $(nextImage).attr("href");
+  //			console.log('After that click currentImageIndex = ' + currentImageIndex)
+  //			console.log(imageLocation + ' will be the next image going right');
+  			updateOverlay(nextImage);                               // pass nextImage value to function updateOverlay
+  		});
+
+  		function updateOverlay (switchPhoto) {                    // called by Arrow click events
+  			var scrollImageLocation = switchPhoto;                  // assign parameter(switchPhoto) to var(scrollImageLocation)
+  			$image.attr("src", scrollImageLocation);                // Update overlay with the image linked in href
+  			var captionText = $(scrollImageLocation).children("img").attr("alt");   // Get child's ALT attribute from selected IMG and set caption
+  			$caption.text(captionText);                             // Select "caption" element set text to contents of captionText
+  		}
+
+
+  	$image.attr("src", imageLocation);                          // Update overlay with the image linked in href
+  	$overlay.fadeIn();                                          // Fade In overlay instead of immediate 'show()'
+
+  	var captionText = $(this).children("img").attr("alt");      // Get child's ALT attribute from selected IMG and set caption
+  	$caption.text(captionText);                                 // Select "caption" element set text to contents of captionText
+
+
+  // ------ Console Log: imageLocation - to see what is selected ------------------------------
+  	console.log('Gallery contains ' + numOfImages.length + ' Active Slides');
+  	console.log( 'currentImageIndex = ' + currentImageIndex);
+  // ------
+
+  });  // End of Click Event Handler
+
+
+// ------- Hide Overlay ----------
+    $overlay.click(function(){  	                               // When overlay is clicked
+      $overlay.fadeOut();                                        // Hide the overlay
+    });
+// ------- Hide Overlay ----------
+
+
+// -------- LiveSearch ------------
+    if ('oninput' in $search[0]) {                              // If browser support input event
+      $search.on('input', filter);                              // Use input event to call filter()
+    } else {                                                    // Otherwise
+      $search.on('keyup', filter);                              // Use keyup event to call filter()
+    }
+// -------- LiveSearch ------------
+}());                                                           // Place script in an IIFE

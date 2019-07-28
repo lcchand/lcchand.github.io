@@ -1,0 +1,37 @@
+/*-------------------------------*/
+/*   _containers.scss            */
+/*-------------------------------*/
+
+
+.flex-all {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+
+.page-container {
+    margin: 0;
+    padding: 16px;
+    background: $widget-gray;
+
+    @media #{$brk-tablet} {
+	padding: 25px;
+    }
+}
+
+
+section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    @media #{$brk-tablet} {
+	flex-direction: row;
+	flex-wrap: wrap;
+    }
+
+    @media #{$brk-max} {
+	margin: $margin-max;
+  }
+}

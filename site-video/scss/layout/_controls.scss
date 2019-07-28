@@ -1,0 +1,47 @@
+
+/*-------------------------------*/
+/*   _controls.scss            */
+/*-------------------------------*/
+
+progress {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+//    appearance: none;
+    //Firefox
+    border: none;
+}
+
+#vid-progress {
+    margin-top: -5px;
+    height: 5px;
+    position: relative;
+    background-color: rgba( 200, 200, 200, 0.7);
+    width: 100%;
+}
+
+/* Safari & Chrome */
+::-webkit-progress-value {
+  background-color: $orange;
+}
+
+/* FireFox */
+progress::-moz-progress-bar {
+    background-color: $orange;
+}
+
+.bc-play,
+.bc-mute {
+  margin-right: 15px;
+}
+
+.bc-time {
+  margin-bottom: 0.375em;
+  margin-right: auto;
+  color: rgb(255, 255, 255);
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+

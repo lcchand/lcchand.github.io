@@ -1,0 +1,73 @@
+/*-------------------------------*/
+/*   _socialstats.scss           */
+/*-------------------------------*/
+
+
+.stat-container {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+
+    @media #{$brk-tablet} {
+
+    }
+}
+
+.social-widget {
+    display: flex;
+    margin: 2px;
+    padding: 0.3333333333333333em 0.1666666666666667em 0.3333333333333333em 0.1666666666666667em;
+    flex: 1 1 0;
+    align-items: center;
+    background-color: $widget-gray;
+    border: 1px solid $theme-gray;
+    border-radius: 0.2em 0.2em 0.2em 0.2em;
+
+    @media #{$brk-tablet} {
+	padding: 0.5em;
+	margin-right: 14px;
+	
+	&:last-of-type {
+	    margin-right: 0;
+	}
+	
+    }
+
+    @media #{$brk-tablet} {
+	margin-right: 24px;
+    }
+}
+
+.social-logo {
+    margin: 0 0.5em 0 0.5em;
+    width: 30px;
+
+
+    @media #{$brk-tablet} {
+	width: 54px;
+
+  }
+
+    @media #{$brk-desktop} {
+	margin-left: 20px;
+    
+
+  }
+}
+
+.social-head {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.social-netstat {
+    font-size: 1.5em;
+    line-height: 1em;
+    font-weight: $SourceSans-weight-light;
+    color: $body-text-color;
+    margin: 0;
+
+    @media #{$brk-tablet} {
+	font-size: 3em;
+    }
+}

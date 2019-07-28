@@ -1,0 +1,132 @@
+/* -----------------------------------------------------------
+--------- Lightbox with Previous & Next functionality --------
+-------------------------------------------------------------*/
+
+
+
+/*------------------------------------------------------------
+-------------------  Overlay (Modal) -------------------------
+-------------------------------------------------------------*/
+
+#overlay {
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  text-align: center;
+}
+
+#overlay a {
+  text-decoration: none;
+  width: 0;
+}
+
+#overlay img {
+/*  margin-top: 96px;*/
+  margin-top: 72px;
+  margin-left: 7px;
+  margin-right: 7px;   /* Original Image Size: 1920w x 1200h */
+  width: 275px;        /*  275w is a Good size for 320 px wide screen -- (275 / 1920) = 0.14  */
+  height: 168px;       /* 1200h x 0.14 = 168  */
+}
+
+#overlay p {
+  color: white;
+  max-width: 260px;
+  text-align: left;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#overlay img[class="leftarrow"],
+#overlay img[class="rightarrow"] {
+  width: 15px;
+  height: 25px;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 110px;
+  border-radius: 15%;
+  transition: all 0.3s ease-in-out;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.leftarrow:hover, .rightarrow:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.active {
+  display:block;
+}
+
+.notActive {
+  display: none;
+}
+
+
+
+/*-------------------------------------------------------------
+----------------  Breakpoints  --------------------------------
+-------------------------------------------------------------*/
+
+@media screen and (min-width: 480px) {  /* IPhone landscape */
+  #overlay img {
+    margin-top: 24px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+
+  #overlay img {
+    width: 300px;        /* 300w is a Good size for 500 px wide screen -- (300 / 1920) = 0.16  */
+    height: 192px;       /* 1200h x 0.16 = 192  */
+                         /* Original Image Size: 1920w x 1200h */
+  }
+
+  #overlay p {
+    max-width: 270px;    /* Caption text */
+  }
+
+  #overlay img[class="leftarrow"],
+  #overlay img[class="rightarrow"] {
+    width: 18px;
+    height: 31px;
+    margin-top: 0;
+    margin-left: 7px;
+    margin-right: 7px;
+    margin-bottom: 112px;
+  }
+
+}
+
+@media screen and (min-width: 760px) {
+
+
+  #overlay img {
+    width: 540px;        /* 540 is a Good size for 760 px wide screen -- (540 / 1920w) = 0.28 */
+    height: 336px;       /* 1200h x 0.28 = 336 */
+    margin-top: 128px;    /* Original Image Size: 1920w x 1200h */
+  }
+
+  #overlay p {
+    max-width: 510px;    /* Caption text */
+  }
+
+  #overlay img[class="leftarrow"],
+  #overlay img[class="rightarrow"]
+ {
+    width: 26px;
+    height: 47px;
+    margin-top: 0;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 175px;
+  }
+
+
+
+}

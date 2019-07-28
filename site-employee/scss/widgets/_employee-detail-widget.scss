@@ -1,0 +1,97 @@
+/*-------------------------------*/
+/* _employee-detail-widget.scss  */
+/*-------------------------------*/
+
+
+
+/* Widget - Employee Detail  */
+
+.employee-detail {
+    background-color: $white;
+    width: 250px;
+    border: 1px solid $theme-gray;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 15%;
+    padding: 12px;
+    padding-top: 16px;
+    text-align: center;
+    line-height: 1.125em;
+    /* Fix: always visible no matter viewport height */
+    position: fixed;
+    left: calc((100vw - 250px) / 2);
+
+    @media #{$brk-tablet} {
+	width: 300px;
+	padding: 25px;
+	padding-top: 32px;
+	margin-top: 10%;
+	left: calc((100vw - 300px) / 2);
+    }
+
+  @media #{$brk-desktop} {
+    width: 458px;
+    padding: 40px;
+    padding-top: 55px;
+    border: 2px solid $theme-gray;
+    left: calc((100vw - 458px) / 2);
+  }
+}
+
+
+.employee-detail-photo {
+    border-radius: 50%;
+    width: 70px;
+
+    @media #{$brk-tablet} {
+      //width: 80px;
+      width: 100px;
+    }
+
+    @media #{$brk-desktop} {
+	width: 120px;
+    }
+
+    @media #{$brk-max} {
+	width: 155px;
+    }
+}
+
+
+.figure-detail {
+  margin: 0;
+}
+
+
+hr {
+    margin-top: 9px;
+    margin-bottom: 9px;
+
+    @media #{$brk-tablet} {
+	margin-top: 20px;
+	margin-bottom: 20px;
+    }
+
+     @media #{$brk-desktop} {
+	margin-top: 40px;
+	margin-bottom: 40px;
+    }
+}
+
+.employee-contact {
+    text-transform: capitalize;
+}
+
+#overlay {
+  background: $overlay;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: none;
+  text-align: center;
+}
+
+

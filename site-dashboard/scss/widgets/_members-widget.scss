@@ -1,0 +1,56 @@
+/*-------------------------------*/
+/*   _members-widget.scss        */
+/*-------------------------------*/
+
+
+
+/* Widget - New Members */
+
+.member-widget {
+    height: 60px;
+    display: flex;
+    padding: 3px 2px 4px 2px;;
+    flex: 1 1 0;
+    align-items: center;
+    border-bottom: 1px solid $theme-gray;
+
+    @media #{$brk-tablet} {
+	height: 70px;
+    }
+}
+
+.member-widget:last-child {
+    border-bottom: none;
+}
+
+figure {
+  margin: 0;
+}
+
+.member-photo {
+    border-radius: 50%;
+    margin-right: 0.25em;
+    width: 35px;
+}
+
+.member-comment {
+    font-size: 1.1666666666666667em;
+    margin: 0;
+}
+
+.member-email {
+    margin: 0;
+    color: $theme-primary;
+}
+
+.member-date {
+    margin-left: auto;
+}
+
+.member-occurence {
+    margin:0;
+}
+
+.member-follow {
+    margin: 0;
+}

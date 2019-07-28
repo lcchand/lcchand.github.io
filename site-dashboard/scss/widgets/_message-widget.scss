@@ -1,0 +1,73 @@
+/*-------------------------------*/
+/*   _message-widget.scss        */
+/*-------------------------------*/
+
+
+/* Common Styling  */
+
+form {
+  margin: 0 auto;
+}
+
+
+
+input, textarea, select, button {
+  width : 100%;
+  border: 1px solid $theme-gray;
+  border-radius: 0.2em;
+  background: $widget-gray;
+  margin-bottom: 1em;
+  font-family: inherit;
+  font-size: 100%;
+}
+
+
+
+legend, label {
+  display: none;
+}
+
+#user-search {
+  margin-top: 14px;
+}
+
+input:focus,
+textarea:focus {
+  background-color: $theme-quadrary-focus;
+}
+
+.input-error {
+  border-color: $input-error-border;
+  background: $input-error-background;
+}
+
+
+textarea {
+  height: 5em;
+
+  @media #{$brk-desktop} {
+    height: 5.375em;
+  }
+}
+
+button {
+  height: 2.5em;
+  background: $theme-primary;
+  color: $white;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-save,
+.button-cancel {
+  width: 45%;
+}
+
+.button-cancel {
+  background-color: $theme-gray;
+}
+
+

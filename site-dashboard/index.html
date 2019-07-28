@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link href="css/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="css/application.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Web Dashboard</title>
+  </head>
+
+  <body class="flex-all">
+    <header role="banner" class="main-header">
+      <!-- <div class="appname"> -->
+      <img class="appname" src="assets/YourApp.svg" alt="YourApp logo">
+      <!-- </div> -->
+      <ul class="profile">
+        <li><img id="alert-bell" class="profile-bell" src="assets/icon-bell.svg" alt="Alert Bell"></li>
+	<!-- Green Alert Dot symbol -->
+	<li><img id="profileAlert" class="profile-alert" src="assets/icon-bell-alert.svg" alt="Alert Present Symbol"></li>
+	<li><img class="profile-pipe" src="assets/nav-pipe.svg" alt="Vertical Bar Symbol"></li>
+	<li><img class="profile-avatar" src="assets/3-avatar.jpg" alt="Avatar Photo"></li>
+	<li class="profile-name">Jim Cricket</li>
+      </ul>
+    </header>
+
+    <div class="page-container">
+
+      <!-- Navigation Bar with 4 SVG Assets -->
+      <nav id="navigation" role="navigation">
+	<ul id="nav-bar">
+	  <li><a href="#stats" class="nav-item"><img class="nav-icon" src="assets/icon-dashboard.svg" alt="dashboard"></a></li>
+	  <li><a href="#members" class="nav-item"><img class="nav-icon" src="assets/icon-members.svg" alt="members"></a></li>
+	  <li><a href="#settings" class="nav-item"><img class="nav-icon" src="assets/icon-settings.svg" alt="settings"></a></li>
+	  <li><a href="#visits" class="nav-item"><img class="nav-icon" src="assets/icon-visits.svg" alt="visits"></a></li>
+	</ul>
+      </nav>
+
+      <!-- Main Container for Charts, Widgets, Messaging & Settings controls -->
+      <main role="main">
+	<!-- Dashboard Tab & Search Box -->
+	<div class="dashboard">
+	  <h1 class="db-tab">Dashboard</h1>
+	  <div class="db-search">
+	    <label for="search">Search</label>
+	    <input type="text" id="search" name="search" placeholder="Search">
+	  </div>
+	</div><!-- End of Dashboard -->
+
+	<!-- Alerts will inserted/removed via Javascript (alertprofile.js) here -->
+	<div id="alerts">
+	  <article  class="alert-message">
+	    <h4>Alert</h4>
+	    <p>
+	      Leo a diam sollicitudin tempor id eu nisl nunc mi ipsum lobortis?
+	    </p>
+	    <button class="alert-button" type="submit" value="X" id="alert-submit">X
+	    </button>
+	  </article>
+	</div>
+
+
+	<!-- 3 Traffic Charts -->
+	<section class="charts">
+	  <h2 id="visits">Traffic Charts</h2>
+	  <p>Traffic Chart (Hourly, Daily, Weekly, Monthly)</p>
+	  <div class="chart-container">
+	    <canvas id="webTraffic"></canvas>
+	  </div>
+	</section>
+
+	<section class="column">
+	  <div class="col-container">
+	    <h2>Daily Traffic</h2>
+	    <div class="chart-container">
+	      <canvas id="dailyTraffic"></canvas>
+	    </div>
+	  </div>
+
+	  <div class="col-container">
+	    <h2>Mobile Users</h2>
+	    <div class="chart-container">
+	      <canvas id="mobileUsers"></canvas>
+	    </div>
+	  </div>
+	</section>
+
+
+	<!-- Social Stats -->
+	<section>
+	  <h2 id="stats" class="stat-head">Social Stats</h2>
+
+	  <div class="stat-container">
+	    
+	    <article class="social-widget">
+	      <div>
+		<img class="social-logo" src="assets/icon-twitter.svg" alt="Twitter Logo">
+	      </div>
+	      <div>
+		<h3 class="social-head">Twitter</h3>
+		<p class="social-netstat">10,345</p>
+	      </div>
+	    </article>
+	    <article class="social-widget">
+	      <div>
+		<img class="social-logo" src="assets/icon-facebook.svg" alt="Facebook Logo">
+	      </div>
+	      <div>
+		<h3 class="social-head">Facebook</h3>
+		<p class="social-netstat">8,739</p>
+	      </div>
+	    </article>
+	    <article class="social-widget">
+	      <div>
+		<img class="social-logo" src="assets/icon-google-plus.svg" alt="Google Plus Logo" >
+	      </div>
+	      <div>
+		<h3 class="social-head">Google+</h3>
+		<p class="social-netstat">2,530</p>
+	      </div>
+	    </article>
+	  </div><!-- stat-container -->
+	</section>
+
+
+	<!-- New Members -->
+	<section class="column">
+	  
+	  <div class="col-container">
+	    <h2 id="members">New Members</h2>
+	    <article class="member-widget">
+	      <figure>
+		<img class="member-photo" src="assets/girl-vc.jpg" alt="Photo of Victoria Chambers" >
+	      </figure>
+	      <div>
+		<p class="member-comment">Victoria Chambers</p>
+		<p class="member-email">victoria.chambers@example.com</p>
+	      </div>
+	      <div class="member-date">
+		<p>10/15/17</p>
+	      </div>
+	    </article>
+	    
+	    <article class="member-widget">
+	      <figure>
+		<img class="member-photo" src="assets/guy-rb.jpg" alt="Photo of Richard Boyd" >
+	      </figure>
+	      <div>
+		<p class="member-comment">Richard Boyd</p>
+		<p class="member-email">richard.boyd@example.com</p>
+	      </div>
+	      <div class="member-date">
+		<p>10/15/17</p>
+	      </div>
+	    </article>
+	    
+	    <article class="member-widget">
+	      <figure>
+		<img class="member-photo" src="assets/girl-ew.jpg" alt="Photo of Elizabeth Wood" >
+	      </figure>
+	      <div>
+		<p class="member-comment">Elizabeth Wood</p>
+		<p class="member-email">elizabeth.wood@example.com</p>
+	      </div>
+	      <div class="member-date">
+		<p>10/15/17</p>
+	      </div>
+	    </article>
+
+	    <article class="member-widget">
+	      <figure>
+		<img class="member-photo" src="assets/guy-jo.jpg" alt="Photo of John Oliver" >
+	      </figure>
+	      <div>
+		<p class="member-comment">John Oliver</p>
+		<p class="member-email">john.oliver@example.com</p>
+	      </div>
+	      <div class="member-date">
+		<p>10/15/17</p>
+	      </div>
+	    </article>
+	  </div><!-- col-container for New members -->
+	  
+
+
+	  <!-- Recent Activity Section -->
+	  <div class="col-container">
+	    <h2 id="memberactivity">Recent Activity</h2>
+	    <article class="member-widget">
+	      <figure>
+		<img class="member-photo" src="assets/girl-vc.jpg" alt="Photo of Victoria Chambers" >
+	      </figure>
+	      <div>
+		<p class="member-comment">Victoria Chambers commented on YourApp's SEO Tips</p>
+		<p class="member-occurence">4 hours ago</p>
+	      </div>
+	      <div class="member-date">
+		<img class="member-follow" src="assets/arrow.svg" alt="right arrow">
+	      </div>
+	    </article>
+
+	    <article class="member-widget">
+	      <figure>
+		<img class="member-photo" src="assets/guy-rb.jpg" alt="Photo of Richard Boyd" >
+	      </figure>
+	      <div>
+		<p class="member-comment">Richard Boyd like the post Facebook's Changes for 2017</p>
+		<p class="member-occurence">4 hours ago</p>
+	      </div>
+	      <div class="member-date">
+		<img class="member-follow" src="assets/arrow.svg" alt="right arrow">
+	      </div>
+	    </article>
+
+	    <article class="member-widget">
+	      <figure>
+		<img class="member-photo" src="assets/girl-ew.jpg" alt="Photo of Elizabeth Wood" >
+	      </figure>
+	      <div>
+		<p class="member-comment">Elizabeth Wood commented on Facebook's Changes for 2017</p>
+		<p class="member-occurence">5 hours ago</p>
+	      </div>
+	      <div class="member-date">
+		<img class="member-follow" src="assets/arrow.svg" alt="right arrow">
+	      </div>
+	    </article>
+
+	    <article class="member-widget">
+	      <figure>
+		<img class="member-photo" src="assets/guy-jo.jpg" alt="Photo of John Oliver" >
+	      </figure>
+	      <div>
+		<p class="member-comment">John Oliver posted YourApp's SEO Tips</p>
+		<p class="member-occurence">1 day ago</p>
+	      </div>
+	      <div class="member-date">
+		<img class="member-follow" src="assets/arrow.svg" alt="right arrow">
+	      </div>
+	    </article>
+	  </div><!-- col-container for Recent Activity -->
+
+	</section><!-- End of Recent Activity -->
+
+
+
+
+	<!-- Member - Message User -->
+	<section class="column">
+	  <div class="message-container">
+	    <h2>Message User</h2>
+	    <div>
+	      <form id="user-form" action="index.html" method="post">
+		<label for="user-search">Search for User</label>
+		<input type="text" id="user-search" name="user-search" placeholder="Search for User">
+		<label for="user-message">Message User</label>
+		<textarea id="user-message" name="user-message" placeholder="Message for User"></textarea>
+		<button id="user-send" type="button" name="user-send">SEND</button>
+	      </form>
+	    </div>
+	  </div>
+	  <!-- End of Message User -->
+
+
+	  <!-- Settings -->
+	  <div class="message-container">
+	    <h2 id="settings">Settings</h2>
+	    
+	    <!-- CSS Toggle Switch -->
+	    <div class="settings-container">
+	      <p>Send Email Notifications</p>
+
+	      <!-- Email Toggle -->
+	      <div>
+		<label class="switch-light switch-ios" style="width: 5em" onclick="">
+		  <input type="checkbox" />
+
+
+		  <span>
+		    <span>Off</span>
+		    <span>On</span>
+		    <a></a>
+		  </span>
+		</label>
+	      </div>
+	    </div>
+
+	    <!-- Profile Toggle -->
+	    <div class="settings-container">
+	      <p>Set Profile to Public</p>
+	      <div>
+		<label class="switch-light switch-ios" style="width: 5em" onclick="">
+		  <input type="checkbox" />
+		  <span>
+		    <span>Off</span>
+		    <span>On</span>
+		    <a></a>
+		  </span>
+		</label>
+	      </div>
+	    </div><!-- setting container -->
+	    <!-- End of CSS Toggle Switch -->
+	    
+	    <form>
+	      <label for="time-zone">Select Time Zone</label>
+	      <select id="time-zone" name="time-zone">
+		<option selected>Select Time Zone</option>
+		<option>Eastern</option>
+		<option>Central</option>
+		<option>Rocky Mountain</option>
+		<option>Western</option>
+	      </select>
+	      <div class="button-container">
+		<button class="button-save" type="button" name="settings-save">SAVE</button>
+		<button class="button-cancel" type="button" name="settings-cancel">CANCEL</button>
+	      </div>
+	    </form>
+	  </div>
+	  
+	</section><!-- End of Settings -->
+      </main>
+
+    </div><!-- End of Page Container -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="js/webtraffic.js"></script>
+    <script src="js/alertprofile.js"></script>
+    <script src="js/message.js"></script>
+  </body>
+</html>

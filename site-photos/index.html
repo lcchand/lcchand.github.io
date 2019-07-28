@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>Project 04 - Lightbox</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--CSS-->
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative|Open+Sans" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative%7COpen+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/lightbox.css">
+  </head>
+
+
+
+  <body>
+
+    <!-- Sprite Map for Modal Arrows -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      
+      <symbol id="leftarrow" viewBox="200 200 100 100">
+	<path d="M250,298.438c-26.758,0-48.438-21.68-48.438-48.438s21.68-48.438,48.438-48.438s48.438,21.68,48.438,48.438 S276.758,298.438,250,298.438z M272.656,241.406H250v-13.848c0-2.09-2.539-3.145-4.004-1.66l-22.324,22.441 c-0.918,0.918-0.918,2.383,0,3.301l22.324,22.441c1.484,1.484,4.004,0.43,4.004-1.66v-13.828h22.656 c1.289,0,2.344-1.055,2.344-2.344v-12.5C275,242.461,273.945,241.406,272.656,241.406z"></path>
+      </symbol>
+
+      <symbol id="rightarrow" viewBox="200 200 100 100">
+	<path d="M250,201.562c26.758,0,48.438,21.68,48.438,48.438s-21.68,48.438-48.438,48.438s-48.438-21.68-48.438-48.438 S223.242,201.562,250,201.562z M227.344,258.594H250v13.848c0,2.09,2.539,3.145,4.004,1.66l22.324-22.441 c0.918-0.918,0.918-2.383,0-3.301l-22.324-22.441c-1.484-1.484-4.004-0.43-4.004,1.66v13.828h-22.656 c-1.289,0-2.344,1.055-2.344,2.344v12.5C225,257.539,226.055,258.594,227.344,258.594z"></path>
+      </symbol>
+      
+    </svg>
+    <!-- End of Sprite Map for Modal Arrows -->
+    
+    <div class="wrap">
+
+      <header>
+
+	<h1>lightbox</h1>
+
+        <div id="search">
+          <label for="filter-search">Search</label>
+          <input type="text" id="filter-search" name="search" placeholder="filter by search">
+        </div>
+
+      </header><!--/header-->
+
+      <div id="gallery">
+        <a class="active" href="Photos/01.jpg"><img src="Photos/Thumbnails/01.jpg" class="active" data-tags="Hay Bales" alt="I love hay bales. Took this snap on a drive through the countryside past some straw fields." ></a>
+        <a class="active" href="Photos/02.jpg"><img src="Photos/Thumbnails/02.jpg" class="active" data-tags="Lake" alt="The lake was so calm today. We had a great view of the snow on the mountains from here." ></a>
+        <a class="active" href="Photos/03.jpg"><img src="Photos/Thumbnails/03.jpg" class="active" data-tags="Canyon" alt="I hiked to the top of the mountain and got this picture of the canyon and trees below." ></a>
+        <a class="active" href="Photos/04.jpg"><img src="Photos/Thumbnails/04.jpg" class="active" data-tags="Iceberg" alt="It was amazing to see an iceberg up close, it was so cold but didn’t snow today." ></a>
+        <a class="active" href="Photos/05.jpg"><img src="Photos/Thumbnails/05.jpg" class="active" data-tags="Desert" alt="The red cliffs were beautiful. It was really hot in the desert but we did a lot of walking through the canyons." ></a>
+        <a class="active" href="Photos/06.jpg"><img src="Photos/Thumbnails/06.jpg" class="active" data-tags="Fall" alt="Fall is coming, I love when the leaves on the trees start to change color." ></a>
+        <a class="active" href="Photos/07.jpg"><img src="Photos/Thumbnails/07.jpg" class="active" data-tags="Plantation" alt="I drove past this plantation yesterday, everything is so green!" ></a>
+        <a class="active" href="Photos/08.jpg"><img src="Photos/Thumbnails/08.jpg" class="active" data-tags="Dunes" alt="My summer vacation to the Oregon Coast. I love the sandy dunes!" ></a>
+        <a class="active" href="Photos/09.jpg"><img src="Photos/Thumbnails/09.jpg" class="active" data-tags="Countryside Lane" alt="We enjoyed a quiet stroll down this countryside lane." ></a>
+        <a class="active" href="Photos/10.jpg"><img src="Photos/Thumbnails/10.jpg" class="active" data-tags="Sunset" alt="Sunset at the coast! The sky turned a lovely shade of orange." ></a>
+        <a class="active" href="Photos/11.jpg"><img src="Photos/Thumbnails/11.jpg" class="active" data-tags="Cave" alt="I did a tour of a cave today and the view of the landscape below was breathtaking." ></a>
+        <a class="active" href="Photos/12.jpg"><img src="Photos/Thumbnails/12.jpg" class="active" data-tags="Bluebells" alt="I walked through this meadow of bluebells and got a good view of the snow on the mountain before the fog came in." ></a>
+      </div><!--/gallery-->
+    </div><!-- wrap -->
+
+
+
+    <!--  Javascript  -->
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/lightbox.js"></script>
+    <!--  Javascript   -->
+
+
+
+
+  </body>
+</html>

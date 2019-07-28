@@ -1,0 +1,903 @@
+/*-------------------------------*/
+/*   Base Imports                */
+/*-------------------------------*/
+/*-------------------------------*/
+/*   _variables.scss             */
+/*-------------------------------*/
+/*----------------------------------*/
+/*   _base.scss  (body, h1, p etc)  */
+/*----------------------------------*/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:400,700");
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100%;
+  min-width: 320px;
+}
+
+html {
+  background: #fff;
+}
+
+/* CSS Variables for Switching Theme Pallettes */
+:root {
+  --Theme-Color-Dk: #111;
+  --Theme-Color: #333;
+  --Theme-Color-Md: #666;
+  --Theme-Color-Lt: #999;
+  --Bldg-Color-Dk: #ec9b07;
+  --Bldg-Color: #f9b22f;
+  --Bldg-Color-Md: #fac461;
+  --Bldg-Color-Lt: #fde9c4;
+  /* Old Bldg Colors
+    --Bldg-Color-Dk: #f5b533;
+    --Bldg-Color-Md: #ffd62a;
+    --Bldg-Color-Lt: #fff9c4;
+  */
+  --Support-Color-Dk: #83BC7D;
+  --Support-Color: #83BC7D;
+  --Support-Color-Md: #bdd7b1;
+  --Support-Color-Lt: #e6f1e5;
+  --System-Color-Dk: #1796cc;
+  --System-Color: #1796cc;
+  --System-Color-Md: #87cee8;
+  --System-Color-Lt: #ecf7fc;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font: 14px 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #555;
+}
+
+.body-homepage {
+  height: 100%;
+}
+
+h1 {
+  margin-top: 0;
+  padding: 50px 0;
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+  font-size: 2.441em;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+h2 {
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+  font-size: 1.953em;
+}
+
+h3 {
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+  font-size: 1.563em;
+}
+
+h4 {
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+  font-size: 1.1em;
+}
+
+p {
+  margin: 0 0 20px;
+  line-height: 1.45;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ol {
+  padding-left: 2.5em;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+dt {
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+  font-size: 1.1em;
+  color: var(--Theme-Color);
+}
+
+dd {
+  padding-left: 1.2em;
+  margin-bottom: 1em;
+}
+
+/*-------------------------------*/
+/*   Layout Imports              */
+/*-------------------------------*/
+/*-------------------------------*/
+/* _containers - main,section,etc*/
+/*-------------------------------*/
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background: #fff;
+  padding: 10px;
+}
+@media (min-width: 768px) {
+  main {
+    flex-direction: row;
+  }
+}
+
+.homepage {
+  background: #fff;
+  margin: 0;
+  padding: 0px;
+}
+@media (min-width: 768px) {
+  .homepage {
+    flex-direction: column;
+  }
+}
+
+section {
+  margin-top: 0.5em;
+  padding: 2px;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  section {
+    padding-left: 20px;
+  }
+}
+
+/* Home Page Exceptions */
+.section-homepage {
+  text-align: center;
+  padding: 15px 25px;
+  margin: 0px;
+}
+@media (min-width: 768px) {
+  .section-homepage {
+    padding: 50px 80px;
+  }
+}
+.section-homepage h2 {
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  padding-bottom: .5em;
+}
+
+.section-light {
+  text-align: center;
+}
+.section-light h2 {
+  border: none;
+}
+.section-light a {
+  color: var(--Theme-Color-Dk);
+}
+
+.section-dark {
+  text-align: center;
+  background-color: var(--Theme-Color-Dk);
+  color: #fff;
+}
+.section-dark h2 {
+  color: white;
+}
+
+.pimg1, .pimg2, .pimg3 {
+  position: relative;
+  opacity: 0.75;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+@media (max-width: 568px) {
+  .pimg1, .pimg2, .pimg3 {
+    background-attachment: scroll;
+  }
+}
+
+.pimg1 {
+  background-image: url("../assets/main_bldg-exterior.jpg");
+  min-height: 500px;
+}
+
+.pimg2 {
+  background-image: url("../assets/pexels-photo-256219.jpeg");
+  min-height: 200px;
+}
+
+.pimg3 {
+  background-image: url("../assets/pexels-photo-373543.jpeg");
+  min-height: 200px;
+}
+
+.ptext {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+  color: #555;
+  font-size: 27px;
+  letter-spacing: 8px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+.ptext .border {
+  background-color: black;
+  color: #fff;
+  padding: 0;
+}
+.ptext .border p {
+  margin: 0;
+}
+.ptext .border.trans {
+  background-color: transparent;
+}
+
+/* 3 Landing Pages - Bldg, Support & Systems */
+.svg-icon {
+  width: 105px;
+  fill: var(--Theme-Color-Dk);
+}
+
+.section-landing {
+  width: 100%;
+  text-align: center;
+}
+.section-landing h2 {
+  border: none;
+}
+
+.category {
+  margin-top: 10px;
+  padding-top: 0;
+}
+@media (min-width: 768px) {
+  .category {
+    padding: 0 40px;
+  }
+}
+
+/*-------------------------------*/
+/*   header.scss                 */
+/*-------------------------------*/
+.main-header,
+.main-nav {
+  display: flex;
+  flex-direction: column;
+  background: #1d3649;
+}
+@media (min-width: 768px) {
+  .main-header,
+  .main-nav {
+    flex-direction: row;
+  }
+}
+
+.main-header a {
+  color: #72b2e2;
+  position: relative;
+}
+
+.main-nav {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: .75em;
+}
+@media (min-width: 768px) {
+  .main-nav {
+    margin-top: 0;
+  }
+}
+
+.main-nav a {
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+}
+
+.main-nav a:hover {
+  color: #72b2e2;
+}
+
+.main-nav li {
+  padding: 8.35px;
+}
+@media (min-width: 768px) {
+  .main-nav li {
+    padding: 21.35px;
+  }
+}
+@media (min-width: 768px) {
+  .main-nav li > button {
+    padding: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-nav li.hamburger {
+    padding: 0;
+  }
+}
+
+.active-bldg {
+  background-color: #f9b22f;
+}
+.active-bldg > a {
+  color: #1d3649;
+}
+
+.active-support {
+  background-color: #83BC7D;
+}
+.active-support > a {
+  color: #1d3649;
+}
+
+.active-systems {
+  background-color: #1796cc;
+}
+.active-systems > a {
+  color: #1d3649;
+}
+
+header {
+  width: 100%;
+  border-top: 3px solid #72b2e2;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  header {
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+header h1 {
+  padding: 0;
+  padding-top: .3em;
+  font-size: 1.3em;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  header h1 {
+    font-size: 2em;
+    letter-spacing: 2px;
+    padding: 10px 0 12px 10px;
+    text-align: left;
+  }
+}
+@media (min-width: 1440px) {
+  header h1 {
+    font-size: 2.441em;
+  }
+}
+
+#hamburger {
+  font-family: "fontawesome";
+  font-size: 36px;
+  color: #fff;
+  background: none;
+  border: none;
+  outline: none;
+  text-align: right;
+  cursor: pointer;
+  display: block;
+  margin-top: 0px;
+  margin-bottom: -7px;
+}
+@media (min-width: 768px) {
+  #hamburger {
+    display: none;
+    margin-top: 8em;
+  }
+}
+
+#hamburger i {
+  font-style: normal;
+}
+
+/*-------------------------------*/
+/*   footer.scss                 */
+/*-------------------------------*/
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: top;
+  justify-content: space-between;
+  background: #1d3649;
+  color: #fff;
+  padding: 10px;
+}
+@media (min-width: 768px) {
+  footer {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+}
+
+address {
+  font-size: .8em;
+  font-style: normal;
+  letter-spacing: 1px;
+}
+@media (min-width: 768px) {
+  address {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 768px) {
+  address:nth-of-type(1n) {
+    flex-basis: 270px;
+  }
+}
+
+address h4 {
+  color: #72b2e2;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+footer span {
+  color: #72b2e2;
+  border-bottom: solid 1px #72b2e2;
+  margin-bottom: 1.2em;
+}
+@media (min-width: 768px) {
+  footer span {
+    margin-bottom: 0;
+    margin-left: 2em;
+    margin-right: 2em;
+    border-bottom: none;
+    border-right: solid 1px #72b2e2;
+  }
+}
+
+/*-------------------------------*/
+/*   table.scss                  */
+/*-------------------------------*/
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2em;
+}
+
+thead {
+  border-bottom: 3px solid var(--Theme-Color);
+}
+
+caption {
+  color: var(--Theme-Color-Md);
+  text-transform: uppercase;
+  text-align: left;
+  letter-spacing: 2px;
+}
+
+thead, tr, td {
+  text-align: left;
+  line-height: 2em;
+}
+
+tbody td:last-child {
+  display: none;
+}
+@media (min-width: 768px) {
+  tbody td:last-child {
+    display: block;
+  }
+}
+
+tr {
+  border-bottom: 2px dotted var(--Theme-Color);
+}
+
+thead th:last-child {
+  display: none;
+}
+@media (min-width: 768px) {
+  thead th:last-child {
+    display: block;
+  }
+}
+
+tr {
+  border-bottom: 2px dotted var(--Theme-Color);
+}
+
+tr:last-child {
+  border-bottom: none;
+}
+
+tr:hover,
+tr:focus {
+  background-color: var(--Theme-Color-Lt);
+  transition: 0.3s ease-in linear;
+}
+
+thead tr:hover,
+thead tr:focus {
+  background-color: #fff;
+  transition: 0.3s ease-in linear;
+}
+
+tfoot tr {
+  border-top: 2px solid var(--Theme-Color);
+  border-bottom: none;
+}
+
+tfoot tr:hover:last-child,
+tfoot tr:focus:last-child {
+  background-color: #fff;
+}
+
+/*-------------------------------*/
+/*   Widgets Imports             */
+/*-------------------------------*/
+/*-------------------------------*/
+/*   _tab-panels.scss            */
+/*-------------------------------*/
+input {
+  display: none;
+}
+
+label {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 15px 25px;
+  font-weight: 600;
+  text-align: center;
+  color: #bbb;
+  border: 1px solid transparent;
+}
+
+label:before {
+  font-family: fontawesome;
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+label[for*='1']:before {
+  content: '\f02c';
+}
+
+/* fa-tags */
+label[for*='2']:before {
+  content: '\f073';
+}
+
+/* fa-calendar */
+label[for*='3']:before {
+  content: '\f02d';
+}
+
+/* fa-book */
+label[for*='4']:before {
+  content: '\f1a9';
+}
+
+/* Drupal */
+label[for*='_ah']:before {
+  content: '\f186';
+}
+
+/* Crescent Moon */
+label:hover {
+  color: #888;
+  cursor: pointer;
+}
+
+input:checked + label {
+  color: #555;
+  border: 1px solid #ddd;
+  border-top: 2px solid var(--Theme-Color);
+  border-bottom: 1px solid #fff;
+}
+
+section h2 {
+  padding: .5em .5em .75em .5em;
+  margin-bottom: .5em;
+  color: var(--Theme-Color-Dk);
+  border-top: 3px solid var(--Theme-Color);
+  border-bottom: 3px solid var(--Theme-Color);
+}
+@media (min-width: 768px) {
+  section h2 {
+    margin-bottom: 1.0em;
+  }
+}
+
+section h3 {
+  color: var(--Theme-Color-Dk);
+}
+
+section#content1,
+section#content2,
+section#content3,
+section#content4,
+section#content_ah {
+  display: none;
+  padding-top: 1em;
+  padding: 10px;
+  margin-top: 0;
+  border: 1px solid #ddd;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4,
+#tab_ah:checked ~ #content_ah {
+  display: block;
+}
+
+section#content1 h4 {
+  font-weight: semi-bold;
+}
+
+section#content1 li,
+section#content2 li,
+section#content3 li,
+section#content4 li,
+section#content_ah li {
+  padding-left: 0.5em;
+}
+
+/* No Hover Candidates for "ol li" yet
+section#content1 li:hover:after,
+section#content2 li:hover:after,
+section#content3 li:hover:after,
+section#content4 li:hover:after {
+    //cursor: pointer;
+    //font-family: fontawesome;
+    //font-weight: $OpenSans-weight-semibold;
+    //content: '\f104';
+    //color: $Frame-Color-Text;
+   // margin-left: 1em;
+    transition: 0.5s ease-in linear;
+    // text-decoration: underline;
+    // border-left: 1px solid orange;
+}
+*/
+/* Debating whether it helps
+section#content1 li:hover,
+section#content2 li:hover,
+section#content3 li:hover,
+section#content4 li:hover {
+    color: $Frame-Color-Md;
+    transition: 0.5s ease-in linear;
+}
+*/
+section#content1 ol,
+section#content2 ol,
+section#content3 ol,
+section#content4 ol,
+section#content_ah ol {
+  margin-bottom: 1.5em;
+}
+
+@media screen and (max-width: 650px) {
+  label {
+    font-size: 0;
+  }
+
+  label:before {
+    margin: 0;
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 400px) {
+  label {
+    padding: 15px;
+  }
+}
+/*-------------------------------*/
+/*   _accordion.scss             */
+/*-------------------------------*/
+.accordion {
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid #e5e5e5;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* Thumb */
+.accordion-thumb {
+  margin: 0;
+  padding: .8rem 0;
+  cursor: pointer;
+  font-weight: normal;
+}
+.accordion-thumb::before {
+  content: '';
+  display: inline-block;
+  height: 7px;
+  width: 7px;
+  margin-right: 1rem;
+  margin-left: .5rem;
+  vertical-align: middle;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  transform: rotate(-45deg);
+  transition: transform .2s ease-out;
+}
+
+/* Panel */
+.accordion-panel {
+  margin: 0;
+  padding-bottom: .8rem;
+  display: none;
+}
+
+/* Active */
+.accordion-item.is-active .accordion-thumb::before {
+  transform: rotate(45deg);
+}
+
+/*-------------------------------*/
+/*   _theme-sidebar.scss         */
+/*-------------------------------*/
+/* Sidebar Element, H3 Text, ahref */
+aside {
+  display: none;
+  flex-shrink: 0;
+  margin-top: 0.5em;
+  margin-bottom: 2em;
+  width: 100%;
+  transition: all .3s;
+  animation: 0.3s ease-in-out sidebaropen;
+}
+@media (min-width: 768px) {
+  aside {
+    margin-top: 0.5em;
+    margin-bottom: 0;
+    display: block;
+    width: 300px;
+    transition: all .3s;
+  }
+}
+aside.as-bg-color-bldg {
+  background-color: var(--Theme-Color-Md);
+}
+aside.as-bg-color-support {
+  background-color: var(--Theme-Color-Lt);
+  border: 2px solid var(--Theme-Color);
+}
+aside.as-bg-color-system {
+  background-color: var(--Theme-Color-Lt);
+}
+aside h3 {
+  padding: .5em 0 .5em .5em;
+}
+aside a {
+  color: #555;
+  width: 100%;
+}
+aside svg {
+  width: 82px;
+  fill: #fff;
+  padding: 0 .5em .25em 0;
+  float: right;
+}
+
+.aside-mobile-show {
+  display: block;
+  flex-shrink: 0;
+  margin-top: 0.5em;
+  margin-bottom: 2em;
+  width: 100%;
+  transition: all .3s;
+}
+
+@keyframes sidebaropen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Don't think these are being used
+.aside-title-bldg,
+.aside-title-support,
+.aside-title-system {
+    text-align: center;
+    letter-spacing: 13px;
+    font-size: 1.6em;
+    text-transform: uppercase;
+    margin-top: 20px;
+    font-weight: semi-bold;
+}
+
+.aside-title-bldg {
+    color: $Bldg-Color;
+}
+
+.aside-title-support {
+    color: $Support-Color;
+}
+
+.aside-title-system {
+    color: $System-Color;
+}
+*/
+/* Accordion Sidebar     */
+button.accordion-sidebar {
+  width: 100%;
+  color: #555;
+  background-color: var(--Theme-Color-Md);
+  border: none;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  text-align: left;
+  padding: .5em .5em;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.2s linear;
+}
+button.accordion-sidebar:after {
+  content: '\f055';
+  font-family: "fontawesome";
+  font-size: 14px;
+  float: right;
+}
+button.accordion-sidebar.is-open:after {
+  content: '\f056';
+}
+button.accordion-sidebar:hover, button.accordion-sidebar.is-open {
+  background-color: var(--Theme-Color);
+  color: #fff;
+}
+
+button.accordion-sidebar:nth-of-type(1n) {
+  border-top: none;
+}
+
+/* Accordion Content       */
+.accordion-sb-content {
+  background-color: #fff;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-in-out;
+}
+.accordion-sb-content ul {
+  padding: 0;
+}
+.accordion-sb-content ul > li {
+  line-height: 2;
+  border-bottom: 1px dotted var(--Theme-Color-Md);
+  padding-left: 1em;
+}
+.accordion-sb-content ul > li:last-child {
+  border-bottom: 2px solid var(--Theme-Color-Md);
+}
+.accordion-sb-content ul > li:hover, .accordion-sb-content ul > li:focus {
+  background-color: var(--Theme-Color-Lt);
+}

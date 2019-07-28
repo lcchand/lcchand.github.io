@@ -1,0 +1,93 @@
+/*-------------------------------*/
+/*   header.scss                 */
+/*-------------------------------*/
+
+header {
+    height: 70px;
+    margin: 0;
+    background: $theme-primary;
+
+    @media #{$brk-desktop} {
+
+    }
+
+
+}
+
+.main-header,
+.profile {
+      display:flex
+}
+
+.appname {
+    width: 8em;
+    align-items: center;
+    padding-left: 10px;
+
+    @media #{$brk-tablet} {
+	width: 10em;
+	padding-left: 2em;
+    }
+
+}
+
+.main-header {
+    justify-content: space-between;
+}
+
+.profile {
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+
+   @media #{$brk-tablet} {
+	padding-right: 2em;
+    }
+
+  & li {
+     padding-right:0.8333333333333333em;
+  }
+
+  & li:last-of-type {
+      padding-right: 0;
+  }
+}
+
+.profile-bell {
+    width: 20px;
+}
+
+.profile-alert {
+    width: 10px;
+    padding: 0px 0px 10px 0px;
+    margin-left: -5px;
+}
+
+.profile-pipe {
+    width: 5px;
+    height: 40px;
+}
+
+
+.profile-avatar {
+  border-radius: 50%;
+  border: 1px solid $white;
+  margin: 0 auto;
+  width: 35px;
+
+  @media #{$brk-tablet} {
+
+  }
+
+  @media #{$brk-desktop} {
+
+
+  }
+}
+
+.profile-name {
+    color: $white;
+    padding-bottom: 0.1666666666666667em;
+}
+
+

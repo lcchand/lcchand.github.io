@@ -1,0 +1,55 @@
+/*-------------------------------*/
+/*   _variables.scss             */
+/*-------------------------------*/
+
+// Descriptive Color Variables
+
+$theme-primary           : rgb(115, 119, 191);
+$theme-secondary         : rgb(77, 76, 114);
+$theme-tertiary          : rgb(116, 177, 191);
+$theme-quadrary          : rgb(129, 201, 143);
+$theme-quadrary-focus    : rgba(129, 201, 143, 0.4);
+$theme-gray              : rgb(178, 178, 178);
+$body-text-color         : #424242;
+$page-color              : #fdf8e1;
+$h1-text-color           : #000;
+$h2-text-color           : red;
+$href-color              : #b3b3b3;
+$href-hover-color        : $page-color;
+$white                   : rgb(255, 255, 255);
+$widget-gray             : #f8f8f8;
+$input-error-border      : rgb(255, 0, 0);
+$input-error-background  : rgba(255,0, 0, .1);
+
+
+
+// Font Stacks - Google Source Sans Pro
+
+$font-url--SourceSans         : 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700';
+
+$font-family--SourceSans      : 'Source Sans Pro', sans-serif;
+
+
+
+
+// Font Weights
+
+$SourceSans-weight-light      : 300;
+$SourceSans-weight-regular    : 400;
+$SourceSans-weight-semibold   : 600;
+$SourceSans-weight-bold       : 700;
+
+
+
+//Asset Paths
+
+$path-icon         : 'icons';
+
+
+// Media query Breakpoints
+
+$brk-mobile       : '(min-width: 320px)';// 320px in requirements
+$brk-tablet       : '(min-width: 768px)';
+$brk-desktop      : '(min-width: 1024px)';
+$brk-max          : '(min-width: 1440px)';
+

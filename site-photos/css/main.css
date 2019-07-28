@@ -1,0 +1,148 @@
+/*-------------------------------------------------------------
+----------------  Entire Page  --------------------------------
+-------------------------------------------------------------*/
+*:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* Limit Overall overall page width */
+:root {
+    min-width: 320px;
+    max-width: 1200px;
+    margin: 0 auto;             /* automatically centers the page */
+    background: #f2f2f2;        /* Fills the page */
+    position: relative;         /* Fix for absolute positioning */
+}
+
+.wrap {
+    min-height: calc(100vh - 22px); /* Fill browser - Footer ht.*/
+    /* regardless of height */
+}
+
+/*-------------------------------------------------------------
+----------------  Body Text  ----------------------------------
+-------------------------------------------------------------*/
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #384047;
+    font-size: 1em;
+    background-color: white;
+}
+
+#search {
+    margin: 0 auto;
+    display: flex;
+}
+
+/*------------------------------------------------------------
+----------------  Headings text ------------------------------
+-------------------------------------------------------------*/
+h1 {
+    font-family: 'Cinzel Decorative', cursive;
+    letter-spacing: 12px;
+    text-align: center;
+    padding-top: 0.35em;
+    margin-bottom: 0;
+    color: rgb(255, 255, 255);
+}
+
+/*------------------------------------------------------------
+----------------  Header  ----------------------------------
+-------------------------------------------------------------*/
+header {
+    background: url('../Photos/IMG_large.jpg') no-repeat 50% 12%;
+}
+
+/*------------------------------------------------------------
+----------------  Form & Fields  -----------------------------
+-------------------------------------------------------------*/
+
+label {
+    display: none;
+}
+
+
+input[type="text"] {
+    border: 2px;
+    font-size: 1em;
+    height: 26px;
+    border-radius: 26px;
+    width: 290px;
+    padding-left: 10px;
+    margin: 10px auto;
+    color: #8a97a0;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+/*------------------------------------------------------------
+----------------  Gallery - IMG  -----------------------------
+-------------------------------------------------------------*/
+
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    align-items: center;
+    margin: 0 auto;      /* Keep UL Container centered */
+}
+
+/* Changed: img to #gallery img */
+#gallery img {
+    width: 200px;
+    height: 200px;
+    margin: 30px;
+    flex:0 0 200px;
+}
+
+/*------------------------------------------------------------
+-------------------  Footer  ---------------------------------
+-------------------------------------------------------------*/
+
+footer p {
+    text-align: center;
+}
+
+/*-------------------------------------------------------------
+----------------  Breakpoints  --------------------------------
+-------------------------------------------------------------*/
+
+@media screen and (min-width: 760px) {
+
+    input[type="text"] {
+	width: 460px; /* increase Txt Input field to required size */
+    }
+
+    #gallery {
+	justify-content: center;
+	align-content: flex-start;;
+    }
+
+}
+
+
+
+
+@media screen and (min-width: 1024px) {
+
+    h1 {
+	padding-top: 1.5em;
+    }
+
+    input[type="text"] {
+	border: 2px;
+	font-size: 1em;
+	height: 36px;
+	border-radius: 36px;
+	margin: 15px auto;
+	margin-bottom: 20px;
+    }
+
+    #gallery {
+	max-width: 1040px;
+    }
+
+}

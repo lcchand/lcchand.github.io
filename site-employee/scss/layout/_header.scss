@@ -1,0 +1,26 @@
+/*-------------------------------*/
+/*   header.scss                 */
+/*-------------------------------*/
+
+header {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    margin: 0;
+    padding: $margin-mobile + 6px;
+    padding-bottom: $margin-mobile;
+    background: $widget-gray;
+
+    @media #{$brk-tablet} {
+	flex-direction: row;
+	justify-content: space-between;
+	padding: $margin-tablet + 17px;
+	padding-bottom: $margin-tablet;
+    }
+
+    @media #{$brk-max} {
+	padding: $margin-max + 30px;;
+	padding-bottom: $margin-max;
+    }
+}
+

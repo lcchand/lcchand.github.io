@@ -1,0 +1,38 @@
+/*-------------------------------*/
+/*   _chart-widget.scss          */
+/*-------------------------------*/
+
+
+.charts {
+  border-top: none;
+}
+
+
+.chart-container {
+  position: relative;
+  margin: 0 auto;
+  height: calc(95%);
+  width: calc(95%);
+}
+
+
+
+
+
+
+#dailyTraffic {
+  margin-top: 35px;
+  
+  @media #{$brk-tablet} {
+    margin-top: 110px;
+  }
+
+  @media #{$brk-desktop} {
+    margin-top: 135px;
+  }
+
+  @media #{$brk-max} {
+	margin-top: 215px;
+    }
+}
+

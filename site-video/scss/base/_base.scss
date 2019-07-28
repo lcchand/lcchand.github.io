@@ -1,0 +1,35 @@
+/*----------------------------------*/
+/*   _base.scss  (body, p, a, etc)  */
+/*----------------------------------*/
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  max-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+}
+
+video {
+    width: 100%;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+  text-align: left;
+  margin: 100px auto;
+  width: 80%;
+  font-family: 'Open Sans', sans-serif;
+  color: $graytext;
+
+  @media #{$brk-mobile} {
+    font-size: 0.75rem;
+    }
+}
+
+.highlight {
+    color: $orange;
+}
+
