@@ -531,8 +531,8 @@ button {
 }
 
 .section--colophon {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 122, 219, 0.7)), to(rgba(0, 214, 219, 0.7))), url("../assets/workspace-Web.jpg");
-  background-image: linear-gradient(rgba(0, 122, 219, 0.7), rgba(0, 214, 219, 0.7)), url("../assets/workspace-Web.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 122, 219, 0.7)), to(rgba(0, 214, 219, 0.7))), url("../assets/Workspace-Web.jpg");
+  background-image: linear-gradient(rgba(0, 122, 219, 0.7), rgba(0, 214, 219, 0.7)), url("../assets/Workspace-Web.jpg");
   width: 100%;
   background-position: center;
   background-size: cover;
@@ -601,7 +601,7 @@ button {
   /* animation-name duration delay-timing animation-type finish */
   -webkit-animation: no-transform 2s 0.5s cubic-bezier(0, 0.5, 0, 1) forwards;
   animation: no-transform 2s 0.5s cubic-bezier(0, 0.5, 0, 1) forwards;
-  background-image: url("../assets/lance-04-1440W.jpg");
+  background-image: url("../assets/Lance-04-1440W.jpg");
   width: 100%;
   min-height: 100%;
   background-position: center;
